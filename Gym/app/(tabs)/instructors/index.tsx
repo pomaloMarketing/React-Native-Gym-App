@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, Pressable, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, FlatList, Image, Pressable, StyleSheet, ActivityIndicator, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 import instructors from "../../data/instructorsData";
 
@@ -21,11 +21,18 @@ export default function InstructorsPage() {
   }
 
   return (
-    <View style={styles.container}>
+    <ImageBackground 
+      source={require('../../../assets/images/background.webp')} 
+      style={styles.container}
+      imageStyle={styles.backgroundImage} 
+    >
+      <View>
+        <Image source={require('../../../assets/images/logo.png')} style={styles.headerLogo} />
+    </View>
       <Text style={styles.title}>Meet Our Instructors</Text>
       <FlatList
         data={instructors}
-        keyExtractor={(item) => item?.id?.toString() ?? Math.random().toString()} // Safe extraction
+        keyExtractor={(item) => item?.id?.toString() ?? Math.random().toString()} 
         renderItem={({ item }) => (
           <Link href={`/instructors/${item.id}`} asChild>
             <Pressable style={styles.card}>
@@ -39,23 +46,32 @@ export default function InstructorsPage() {
           </Link>
         )}
       />
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: "#fff",
+    paddingTop: 20,
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+  },
+  headerLogo: {
+    marginTop: 50,
+  },
+  backgroundImage: {
+    resizeMode: 'cover', 
+    justifyContent: 'center', 
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
+    marginTop: 50,
     textAlign: "center",
+    color: 'white', 
   },
   card: {
     flexDirection: "row",
@@ -80,6 +96,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 18,
+    color: 'white', 
   },
   errorText: {
     fontSize: 18,
