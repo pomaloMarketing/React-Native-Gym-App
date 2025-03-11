@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Gym",
-    "slug": "Gym",
+    "slug": "gym-for-her",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.pomalomarketing.gymforher"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +37,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "cf05f0bb-68d2-416a-8ae6-52bec9847ca9"
+      }
+    },
+    "owner": "pomalomarketing"
   }
 }

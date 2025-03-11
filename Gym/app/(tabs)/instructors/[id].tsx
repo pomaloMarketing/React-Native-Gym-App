@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet, ScrollView, ActivityIndicator } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import instructors from "../data/instructorsData";
+import instructors from "../../data/instructorsData";
 
 export default function InstructorDetail() {
   const { id } = useLocalSearchParams(); // Get ID from the URL

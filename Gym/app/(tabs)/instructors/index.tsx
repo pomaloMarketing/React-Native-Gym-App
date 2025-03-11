@@ -1,5 +1,6 @@
 import { View, Text, FlatList, Image, Pressable, StyleSheet, ActivityIndicator, ImageBackground } from "react-native";
 import { Link } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 import instructors from "../../data/instructorsData";
 
 export default function InstructorsPage() {
