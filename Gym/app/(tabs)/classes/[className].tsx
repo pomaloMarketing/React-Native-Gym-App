@@ -1,9 +1,14 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView, Button } from "react-native";
 import { useRouter } from "expo-router";  // This is for programmatic navigation
-import { Link } from "expo-router";  // You can use Link to navigate to the class pages
 
-const ClassSignUp = ({ className }: { className: string }) => {
+const ClassSignUp = () => {
+  const router = useRouter();  // Get the router
+  const { query } = router;  // Destructure query from router
+
+  // Check if query and className are available before using them
+  const className = query?.className;
+
   const classDetails = {
     "spinning-indoor-cycling": {
       title: "Spinning - Indoor Cycling",
@@ -17,17 +22,17 @@ const ClassSignUp = ({ className }: { className: string }) => {
       startTime: "09:30",
       endTime: "10:20",
       description: "Join us for an exhilarating Zumba dance class!",
-      img: require('../../../assets/images/zumbda.jpg')
+      img: require('../../../assets/images/zumba.jpg')
     },
     // Add other class details here...
   };
 
-  const currentClass = classDetails[className];
+  const currentClass = className ? classDetails[className as string] : null;
 
   if (!currentClass) {
     return (
       <View style={styles.container}>
-        <Text>Class not found.</Text>
+        <Text>Class not found TESTTTTTTTTTTTTTTTTTTTTTT</Text>
       </View>
     );
   }
