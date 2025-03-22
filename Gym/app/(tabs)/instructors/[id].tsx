@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, ScrollView, ActivityIndicator } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView, ActivityIndicator, ImageBackground } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import instructors from "../../data/instructorsData";
 
@@ -6,11 +6,6 @@ export default function InstructorDetail() {
   const { id } = useLocalSearchParams(); // Get ID from the URL
   const instructorId = parseInt(id as string, 10); // Ensure `id` is a number
   const instructor = instructors?.find((instr) => instr.id === instructorId);
-
-  // Debugging: Log values
-  // console.log("Instructor ID:", instructorId);
-  // console.log("Instructors Data:", instructors);
-  // console.log("Found Instructor:", instructor);
 
   if (!instructors) {
     return (
@@ -30,6 +25,23 @@ export default function InstructorDetail() {
   }
 
   return (
+
+ <View style={{ flex: 1 }}>  
+      <ImageBackground 
+        source={require('../../../assets/images/background.webp')} 
+        style={styles.container}
+        imageStyle={styles.backgroundImage} 
+      >
+        <View>
+          <Image source={require('../../../assets/images/logo.png')} style={styles.headerLogo} />
+        </View>
+        <Text style={styles.classtitle}>Our Instructors</Text>
+      </ImageBackground>
+
+
+
+
+
     <ScrollView contentContainerStyle={styles.container}>
       <Image source={instructor.image} style={styles.image} />
       <Text style={styles.name}>{instructor.name}</Text>
@@ -45,15 +57,29 @@ export default function InstructorDetail() {
         <Text style={styles.listItem}>No certifications available</Text>
       )}
     </ScrollView>
+
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    flex: 0,
+    padding: 40,
     alignItems: "center",
     backgroundColor: "#fff",
+  },
+  classtitle: {
+    fontSize: 22, 
+    fontWeight: "bold",
+    color: "white",
+    marginTop: 10,
+  },
+  headerLogo: {
+    marginTop: 75,
+  },
+  backgroundImage: {
+    height: 300,
   },
   image: {
     width: 150,
