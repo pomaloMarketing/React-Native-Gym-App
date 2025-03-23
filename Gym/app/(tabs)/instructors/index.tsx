@@ -42,7 +42,10 @@ export default function InstructorsPage() {
               ) : (
                 <View style={styles.placeholderImage} />
               )}
-              <Text style={styles.name}>{item.name || "Unknown Instructor"}</Text>
+              <View style={{ flexDirection: "column" }}>  
+                <Text style={styles.name}>{item.name || "Unknown Instructor"}</Text>
+                <Text style={{paddingTop: 10, textDecorationLine: "underline", color: "white", opacity: .55,}}>Learn More →</Text>
+              </View>
             </Pressable>
           </Link>
         )}

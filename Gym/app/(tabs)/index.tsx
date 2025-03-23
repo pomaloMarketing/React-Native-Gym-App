@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions, FlatList, Image } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions, FlatList, Image , ScrollView} from 'react-native';
 import { Link } from 'expo-router';
 import CalendarComponent from '@/components/CalendarComponent';
 
@@ -208,31 +208,57 @@ const HomeScreen = () => {
   };
 
   return (
-    <ImageBackground source={require('../../assets/images/background.webp')} style={styles.background}>
-      <View>
+    <View style={{ flex: 1 }}>
+      
+    {/* Background Image - Fixed */}
+    <ImageBackground 
+      source={require('../../assets/images/background.webp')} 
+      style={styles.backgroundImage}
+      imageStyle={styles.imageStyle}
+    >
+      <View style={styles.headerContainer}>
         <Image source={require('../../assets/images/logo.png')} style={styles.headerLogo} />
+        <Text style={styles.gymTitle}>Flushing's Premier Women's Gym</Text>
       </View>
-
-      <FlatList
-        ListHeaderComponent={
-          <>
-            <CalendarComponent onDateSelect={handleDateSelect} />
-          </>
-        }
-        data={selectedDate ? getClassesForSelectedDate() : []}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.classInfoContainer}>
-            <Text style={styles.classTitle}>{item.title}</Text>
-            <Text style={styles.classTime}>{`${item.startTime} - ${item.endTime}`}</Text>
-            <Text style={styles.classDescription}>{item.description}</Text>
-            <Link href={item.link} style={styles.link}>
-              <Text style={styles.classLink}>Sign Up</Text>
-            </Link>
-          </View>
-        )}
-      />
     </ImageBackground>
+
+    {/* Content Below Background */}
+    <FlatList
+      ListHeaderComponent={(
+        <>
+          {/* Non-Scrolling Section */}
+          <View style={styles.staticContent}>
+            <Text style={styles.MainTitle}>Find a Class and Join our Community!</Text>
+            <Text style={styles.SubTitle}>
+              The Gym For Her is a community for women to have a space to exercise, 
+              take part in fitness classes, and learn about health and wellness in a comfortable environment.
+            </Text>
+            
+            <View style={styles.card}>
+              <Image style={styles.heroHomeImage} source={require('../../assets/images/drums.jpg')} />
+            </View>
+
+            <CalendarComponent onDateSelect={handleDateSelect} />
+          </View>
+        </>
+      )}
+      data={selectedDate ? getClassesForSelectedDate() : []}
+      keyExtractor={(item, index) => index.toString()}
+      renderItem={({ item }) => (
+        <View style={styles.classInfoContainer}>
+          <Text style={styles.classTitle}>{item.title}</Text>
+          <Text style={styles.classTime}>{`${item.startTime} - ${item.endTime}`}</Text>
+          <Text style={styles.classDescription}>{item.description}</Text>
+          <Link href={item.link} style={styles.link}>
+            <Text style={styles.classLink}>Sign Up →</Text>
+          </Link>
+        </View>
+      )}
+    />
+  </View>
+ 
+
+    
   );
 };
 
@@ -241,9 +267,30 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
   },
+  headerContainer: {
+    alignItems: "center",
+    height: 300,
+  },
+  gymTitle: {
+    fontSize: 22, 
+    fontWeight: "bold",
+    color: "white",
+    marginTop: 10,
+  },
+  staticContent: {
+    flex: 0,
+    padding: 40,
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+  heroHomeImage: {
+    width: 320,
+    height: 200,
+    margin: "auto",
+  },
   headerLogo: {
     margin: 'auto',
-    marginTop: 80,
+    paddingTop: 50,
     paddingBottom: 20,
     height: 150,
     width: 250,
@@ -279,8 +326,46 @@ const styles = StyleSheet.create({
   classLink: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#FF7F50', // Orange color for the link
+    color: '#ff6ab4', 
+    textDecorationLine: "underline",
   },
+  image: {
+    width: 200,
+    height: 200,
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  classtitle: {
+    fontSize: 22, 
+    fontWeight: "bold",
+    color: "white",
+    marginTop: 10,
+  },
+  container: {
+    flex: 0,
+    padding: 20,
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+  headerLogo: {
+    marginTop: 100,
+    height: 100,
+    width: 200,
+  },
+  MainTitle: {
+    fontSize: 22,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 15,
+  },
+  SubTitle: {
+    paddingBottom: 20,
+  }
 });
 
 export default HomeScreen;

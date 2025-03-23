@@ -2,6 +2,8 @@ import { useState } from "react";
 import { View, Text, TextInput, Button, Image, StyleSheet, ScrollView, ImageBackground, Alert, KeyboardAvoidingView, Platform } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import classData from "../../data/classData"; // Ensure the import path is correct
+import SimpleForm from "../../../components/SimpleForm";  // Import the new form
+
 
 export default function ClassDetail() {
   const { id } = useLocalSearchParams(); // Get ID from the URL
@@ -53,32 +55,10 @@ export default function ClassDetail() {
           <Text style={styles.description}>{clas.description}</Text>
 
           {/* Join Class Form */}
+          
           <View style={styles.formContainer}>
-            <Text style={styles.formTitle}>Sign up for {clas.title} class!</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Your Name"
-              value={name}
-              onChangeText={setName}
-              placeholderTextColor="#888" // Add color to placeholder text
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Phone Number"
-              value={phone}
-              onChangeText={setPhone}
-              placeholderTextColor="#888" // Add color to placeholder text
-              keyboardType="phone-pad" // To ensure correct input for phone
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Your Email"
-              value={email}
-              onChangeText={setEmail}
-              keyboardType="email-address"
-              placeholderTextColor="#888" // Add color to placeholder text
-            />
-            <Button title="Request to Join" onPress={handleSubmit} />
+            {/* Email Form */}
+          <SimpleForm classDetails={clas} />
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
