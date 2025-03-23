@@ -13,14 +13,14 @@ export default function Layout() {
         }} 
       />
       <Tabs.Screen 
-        name="Classes" // Use the folder name, not "classes"
+        name="Classes/index" // Use the folder name speficially so the route is picked up
         options={{ 
           title: 'Classes', 
           tabBarIcon: ({ color, size }) => <Ionicons name="bicycle" size={size} color={color} />
         }} 
       />
       <Tabs.Screen 
-        name="Instructors" 
+        name="Instructors/index" 
         options={{ 
           title: 'Instructors', 
           tabBarIcon: ({ color, size }) => <Ionicons name="person" size={size} color={color} />

@@ -37,12 +37,18 @@ export default function ClassesPage() {
           <Link style={styles.linkTitle} href={`/Classes/${item.id}`} asChild>
             <Pressable style={styles.card}>
               {item.img ? (
-                <Image source={item.img} style={styles.image} />
+                <Image source={item.img} style={styles.ClassImage} />
               ) : (
                 <View style={styles.placeholderImage} />
               )}
-            <Text style={{ color: "white" }}>{item.title || "Unknown Class"}</Text>
-              {/* <Text style={styles.description}>{item.description}</Text> */}
+              <View style={{ flexDirection: "column" }}>  
+                  <Text style={{ color: "white", fontSize: 18 }}>
+                    {item.title || "Unknown Class"}
+                  </Text>
+                  <Text style={{paddingTop: 10, textDecorationLine: "underline", color: "white", opacity: .55,}}>Learn More →</Text>
+                  
+              </View>
+
             </Pressable>
           </Link>
         )}
@@ -92,6 +98,15 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginRight: 10,
     objectFit: "contain",
+  },
+  ClassImage: {
+    width: 125,
+    height: 125,
+    borderRadius: 5,
+    marginRight: 10,
+    objectFit: "contain",
+    paddingTop: 10,
+    paddingBottom: 20,
   },
   placeholderImage: {
     width: 50,
