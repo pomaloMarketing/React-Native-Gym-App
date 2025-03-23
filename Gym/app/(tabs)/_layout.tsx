@@ -4,44 +4,45 @@ import { View, Image, StyleSheet } from 'react-native';
 
 export default function Layout() {
   return (
-    <>
-      {/* Custom Header */}
-      {/* <View style={styles.header}>
-        <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
-      </View> */}
-
-      {/* Tabs Navigation */}
-      <Tabs screenOptions={{ headerShown: false }}>
-        <Tabs.Screen 
-          name="index" 
-          options={{ 
-            title: 'Home', 
-            tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />
-          }} 
-        />
-        <Tabs.Screen 
-          name="classes" 
-          options={{ 
-            title: 'Classes', 
-            tabBarIcon: ({ color, size }) => <Ionicons name="book" size={size} color={color} />
-          }} 
-        />
-        <Tabs.Screen 
-            name="instructors"  
-            options={{ 
-                title: 'Instructors', 
-                tabBarIcon: ({ color, size }) => <Ionicons name="person" size={size} color={color} />
-            }} 
-        />
-        <Tabs.Screen 
-          name="about" 
-          options={{ 
-            title: 'About', 
-            tabBarIcon: ({ color, size }) => <Ionicons name="information-circle" size={size} color={color} />
-          }} 
-        />
-      </Tabs>
-    </>
+    <Tabs screenOptions={{ headerShown: false }}>
+      <Tabs.Screen 
+        name="index" 
+        options={{ 
+          title: 'Home', 
+          tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />
+        }} 
+      />
+      <Tabs.Screen 
+        name="Classes" // Use the folder name, not "classes"
+        options={{ 
+          title: 'Classes', 
+          tabBarIcon: ({ color, size }) => <Ionicons name="bicycle" size={size} color={color} />
+        }} 
+      />
+      <Tabs.Screen 
+        name="Instructors" 
+        options={{ 
+          title: 'Instructors', 
+          tabBarIcon: ({ color, size }) => <Ionicons name="person" size={size} color={color} />
+        }} 
+      />
+      <Tabs.Screen 
+        name="about" 
+        options={{ 
+          title: 'About', 
+          tabBarIcon: ({ color, size }) => <Ionicons name="information-circle" size={size} color={color} />
+        }} 
+      />
+       {/* Hide dynamic routes */}
+       <Tabs.Screen
+        name="Classes/[id]"
+        options={{ href: null }}
+      />
+      <Tabs.Screen
+        name="Instructors/[id]"
+        options={{ href: null }}
+      />
+    </Tabs>
   );
 }
 

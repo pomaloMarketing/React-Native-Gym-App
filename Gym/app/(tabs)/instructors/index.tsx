@@ -35,7 +35,7 @@ export default function InstructorsPage() {
         data={instructors}
         keyExtractor={(item) => item?.id?.toString() ?? Math.random().toString()} 
         renderItem={({ item }) => (
-          <Link href={`/instructors/${item.id}`} asChild>
+          <Link href={`/Instructors/${item.id}`} asChild>
             <Pressable style={styles.card}>
               {item.image ? (
                 <Image source={item.image} style={styles.image} />
