@@ -31,7 +31,7 @@ export default function ClassesPage() {
       </View>
       <Text style={styles.title}>Our Classes</Text>
       <FlatList
-        data={classes}
+        data={classes} 
         keyExtractor={(item) => item.id} 
         renderItem={({ item }) => (
           <Link style={styles.linkTitle} href={`/classesList/${item.id}`} asChild>
@@ -41,7 +41,7 @@ export default function ClassesPage() {
               ) : (
                 <View style={styles.placeholderImage} />
               )}
-              <Text style={styles.name}>{item.title || "Unknown Class"}</Text>
+            <Text style={{ color: "white" }}>{item.title || "Unknown Class"}</Text>
               {/* <Text style={styles.description}>{item.description}</Text> */}
             </Pressable>
           </Link>
