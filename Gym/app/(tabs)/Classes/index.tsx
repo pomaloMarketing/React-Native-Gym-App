@@ -34,7 +34,7 @@ export default function ClassesPage() {
         data={classes} 
         keyExtractor={(item) => item.id} 
         renderItem={({ item }) => (
-          <Link style={styles.linkTitle} href={`/classesList/${item.id}`} asChild>
+          <Link style={styles.linkTitle} href={`/Classes/${item.id}`} asChild>
             <Pressable style={styles.card}>
               {item.img ? (
                 <Image source={item.img} style={styles.image} />

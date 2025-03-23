@@ -13,7 +13,7 @@ const classData = [
     endTime: "09:20",
     daysOfWeek: [0], // Monday
     description: "Experience the ultimate high-energy workout with our Spinning - Indoor Cycling class at The Gym For Her.",
-    link: "/classesList/spinning-indoor-cycling"
+    link: "/Classes/spinning-indoor-cycling"
   },
   {
     title: "Zumba Dance",
@@ -21,7 +21,7 @@ const classData = [
     endTime: "10:20",
     daysOfWeek: [0],
     description: "Join us for an exhilarating Zumba dance class that combines energetic music with dynamic dance moves, creating a fun and effective workout!",
-    link: "/classesList/zumba-dance"
+    link: "/Classes/zumba-dance"
   },
   {
     title: "Build Strength & Endurance",
@@ -29,7 +29,7 @@ const classData = [
     endTime: "18:20",
     daysOfWeek: [0],
     description: "Get ready to challenge yourself in our Build Strength and Endurance class, designed to enhance your overall conditioning and physical fitness!",
-    link: "/classesList/zumba-dance"
+    link: "/Classes/zumba-dance"
   },
   {
     title: "Restorative Yoga",
@@ -37,7 +37,7 @@ const classData = [
     endTime: "19:20",
     daysOfWeek: [0],
     description: "Discover the transformative benefits of yoga in our invigorating classes designed to enhance flexibility while strengthening your mind and body.",
-    link: "/classesList/yoga"
+    link: "/Classes/yoga"
   }, 
   // Tuesday Classes
   {
@@ -46,7 +46,7 @@ const classData = [
     endTime: "09:50",
     daysOfWeek: [1], // Tuesday
     description: "Get ready to unleash your inner strength in our Strength Boot Camp, a dynamic class designed to deliver a comprehensive full-body workout!",
-    link: "/classesList/tabata" // Unique path for the class
+    link: "/Classes/tabata" // Unique path for the class
   },
   {
     title: "Stepping with T Step Aerobics",
@@ -54,7 +54,7 @@ const classData = [
     endTime: "18:20",
     daysOfWeek: [1],
     description: "Get ready to groove and move in our Steppin' with T Step Aerobics class, where you'll enjoy an hour of fun filled with upbeat music remixes from the 80s, 90s, and 2000s!",
-    link: "/classesList/steppin-t" // Unique path for the class
+    link: "/Classes/steppin-t" // Unique path for the class
   },
   {
     title: "Drums Alive",
@@ -62,7 +62,7 @@ const classData = [
     endTime: "19:20",
     daysOfWeek: [1],
     description: "Experience a unique and exhilarating workout with Drums Alive, where music and rhythm come together for an engaging upper-body fitness experience!",
-    link: "/classesList/drums-alive" // Unique path for the class
+    link: "/Classes/drums-alive" // Unique path for the class
    },
 
   // Wednesday Classes
@@ -72,7 +72,7 @@ const classData = [
     endTime: "09:20",
     daysOfWeek: [2], // Wednesday
     description: "Get ready to challenge yourself in our Build Strength and Endurance class, designed to enhance your overall conditioning and physical fitness!",
-    link: "/classesList/tabata" // Unique path for the class
+    link: "/Classes/tabata" // Unique path for the class
   },
   {
     title: "Drums Alive",
@@ -80,7 +80,7 @@ const classData = [
     endTime: "10:20",
     daysOfWeek: [2],
     description: "Experience a unique and exhilarating workout with Drums Alive, where music and rhythm come together for an engaging upper-body fitness experience!",
-    link: "/classesList/drums-alive" // Unique path for the class
+    link: "/Classes/drums-alive" // Unique path for the class
   },
   {
     title: "Zumba",
@@ -88,7 +88,7 @@ const classData = [
     endTime: "18:20",
     daysOfWeek: [2],
     description: "Join us for an exhilarating Zumba dance class that combines energetic music with dynamic dance moves, creating a fun and effective workout!",
-    link: "/classesList/zumba-dance" // Unique path for the class
+    link: "/Classes/zumba-dance" // Unique path for the class
   },
   {
     title: "Kettlebell",
@@ -96,7 +96,7 @@ const classData = [
     endTime: "19:20",
     daysOfWeek: [2],
     description: "Grab one of our kettlebells and get ready to transform your fitness routine!",
-    link: "/classesList/kettlebell-ampd" // Unique path for the class
+    link: "/Classes/kettlebell-ampd" // Unique path for the class
   },
 
   // Thursday Classes
@@ -106,7 +106,7 @@ const classData = [
     endTime: "09:15",
     daysOfWeek: [3], // Thursday
     description: "Are you ready to maximize your workout in minimal time? Join our Tabata class, a high-intensity interval training (HIIT) program designed to push your limits!",
-    link: "/classesList/tabata" // Unique path for the class
+    link: "/Classes/tabata" // Unique path for the class
   },
   {
     title: "Strength in Drumming",
@@ -114,7 +114,7 @@ const classData = [
     endTime: "10:15",
     daysOfWeek: [3],
     description: "Join us for Strength in Drumming, an exciting class that fuses cardio drumming with strength training for a unique fitness experience!",
-    link: "/classesList/drums-alive" // Unique path for the class
+    link: "/Classes/drums-alive" // Unique path for the class
   },
   {
     title: "Tabata & Bootcamp",
@@ -122,7 +122,7 @@ const classData = [
     endTime: "17:30",
     daysOfWeek: [3],
     description: "Get ready to sweat in our Tabata & Bootcamp class, a powerful combination of interval training and strength exercises that will take your fitness to the next level!",
-    link: "/classesList/tabata" // Unique path for the class
+    link: "/Classes/tabata" // Unique path for the class
   },
   {
     title: "Spin & Stretch - Indoor Cycling",
@@ -138,7 +138,7 @@ const classData = [
     endTime: "19:50",
     daysOfWeek: [3],
     description: "Experience the ultimate workout with our Strength Fusion class, where we blend a variety of activities to enhance your strength and overall fitness!",
-    link: "/classesList/tabata" // Unique path for the class
+    link: "/Classes/tabata" // Unique path for the class
   },
 
   // Friday Classes
@@ -148,7 +148,7 @@ const classData = [
     endTime: "09:50",
     daysOfWeek: [4], // Friday
     description: "Discover the perfect blend of strength and grace in our Barre Fusion class, a low-impact workout designed to sculpt and tone your body!",
-    link: "/classesList/barre-fusion" // Unique path for the class
+    link: "/Classes/barre-fusion" // Unique path for the class
   },
   {
     title: "Restorative Yoga",
@@ -156,7 +156,7 @@ const classData = [
     endTime: "10:50",
     daysOfWeek: [4],
     description: "Discover the transformative benefits of yoga in our invigorating classes designed to enhance flexibility while strengthening your mind and body.",
-    link: "/classesList/yoga" // Unique path for the class
+    link: "/Classes/yoga" // Unique path for the class
   },
   {
     title: "30/30 Strength & Step",
@@ -164,7 +164,7 @@ const classData = [
     endTime: "18:20",
     daysOfWeek: [4],
     description: "Get ready to elevate your fitness in our 30/30 Strength & Step class, a dynamic fusion of strength training and step aerobics!",
-    link: "/classesList/tabata" // Unique path for the class
+    link: "/Classes/tabata" // Unique path for the class
   },
 
   // Saturday Classes
@@ -174,7 +174,7 @@ const classData = [
     endTime: "09:50",
     daysOfWeek: [5], // Saturday
     description: "Get ready to unleash your inner athlete in our Turbo / Strong Nation Combo class, a high-energy, full-body HIIT workout designed to push your limits!",
-    link: "/classesList/tabata" // Unique path for the class
+    link: "/Classes/tabata" // Unique path for the class
   },
   {
     title: "Stepping with T Step Aerobics",
@@ -182,7 +182,7 @@ const classData = [
     endTime: "10:55",
     daysOfWeek: [5],
     description: "Get ready to groove and move in our Steppin' with T Step Aerobics class, where you'll enjoy an hour of fun filled with upbeat music remixes from the 80s, 90s, and 2000s!",
-    link: "/classesList/steppin-t" // Unique path for the class
+    link: "/Classes/steppin-t" // Unique path for the class
   },
   {
     title: "Pop Up Classes (Random)",
@@ -190,7 +190,7 @@ const classData = [
     endTime: "18:20",
     daysOfWeek: [5],
     description: "These dynamic classes may include a mix of your favorites, ensuring you always have something new to try.",
-    link: "/classesList/steppin-t" // Unique path for the class
+    link: "/Classes/steppin-t" // Unique path for the class
   },
 ];
 
