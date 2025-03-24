@@ -33,6 +33,13 @@ export default function Layout() {
           tabBarIcon: ({ color, size }) => <Ionicons name="information-circle" size={size} color={color} />
         }} 
       />
+      <Tabs.Screen 
+        name="notifications" 
+        options={{ 
+          title: 'notifications', 
+          tabBarIcon: ({ color, size }) => <Ionicons name="notifications" size={size} color={color} />
+        }} 
+      />
        {/* Hide dynamic routes */}
        <Tabs.Screen
         name="Classes/[id]"
