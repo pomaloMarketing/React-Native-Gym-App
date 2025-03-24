@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; 
 import { View, Text, ImageBackground, StyleSheet, Dimensions, FlatList, Image , ScrollView} from 'react-native';
 import { Link } from 'expo-router';
 import CalendarComponent from '@/components/CalendarComponent';
+import * as Notifications from 'expo-notifications';
+import { registerForPushNotificationsAsync } from '../services/NotificationService'; 
+
 
 const { width } = Dimensions.get('window');
 const isMobile = width < 768; // Adjust for mobile screens
@@ -196,7 +199,58 @@ const classData = [
 
 const HomeScreen = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  
+  const [expoPushToken, setExpoPushToken] = useState<string | null>(null);
+  const [notification, setNotification] = useState<Notifications.Notification | null>(null);
+  const notificationListener = useRef<any>();
+  const responseListener = useRef<any>();
+
+  useEffect(() => {
+    // Register for push notifications
+    registerForPushNotificationsAsync().then(token => {
+      if (token) {
+        setExpoPushToken(token);
+      }
+    });
+
+    notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
+      setNotification(notification);
+    });
+
+    responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
+      console.log('User interacted with notification:', response);
+    });
+
+    return () => {
+      Notifications.removeNotificationSubscription(notificationListener.current);
+      Notifications.removeNotificationSubscription(responseListener.current);
+    };
+  }, []);
+
+  const sendPushNotification = async () => {
+    if (!expoPushToken) {
+      console.log('No Expo Push Token available');
+      return;
+    }
+
+    const message = {
+      to: expoPushToken,
+      sound: 'default',
+      title: 'New Class Alert 🚀',
+      body: 'Check out the latest fitness classes at Gym For Her!',
+      data: { screen: 'Classes' }
+    };
+
+    await fetch('https://exp.host/--/api/v2/push/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Accept-Encoding': 'gzip, deflate',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+  };
+
   const handleDateSelect = (date) => {
     setSelectedDate(date);
   };
