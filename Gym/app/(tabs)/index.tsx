@@ -235,7 +235,7 @@ const HomeScreen = () => {
   //   const message = {
   //     to: expoPushToken,
   //     sound: 'default',
-  //     title: 'New Class Alert 🚀',
+  //     title: 'New Class Alert ',
   //     body: 'Check out the latest fitness classes at Gym For Her!',
   //     data: { screen: 'Classes' }
   //   };
